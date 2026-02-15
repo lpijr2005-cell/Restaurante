@@ -1,0 +1,40 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card shadow-lg border-0">
+        <div class="card-body p-4">
+          <h2 class="text-center mb-4 fw-bold text-dark">Únete a Karaage Infinite</h2>
+          
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label class="form-label">Nombre de usuario</label>
+              <input type="text" formControlName="username" class="form-control" placeholder="Ej: kenshin99">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" formControlName="email" class="form-control" placeholder="nombre@test.com">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Contraseña</label>
+              <input type="password" formControlName="password" class="form-control" placeholder="mínimo 4 caracteres">
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label">¿Cuál es tu perfil?</label>
+              <select formControlName="role" class="form-select">
+                <option value="user">Comensal entusiasta</option>
+                <option value="chef">Chef profesional</option>
+              </select>
+            </div>
+
+            <button type="submit" [disabled]="registerForm.invalid" class="btn btn-warning w-100 fw-bold">
+              Crear cuenta
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

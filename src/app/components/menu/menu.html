@@ -1,0 +1,17 @@
+<div class="container mt-4">
+  <div class="row">
+    @if (platos$ | async; as lista) {
+      @for (plato of lista; track plato.id) {
+        <div class="col-md-4 mb-3">
+          <div class="card h-100">
+            <img [src]="plato.image" class="card-img-top" [alt]="plato.name" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="card-title">{{ plato.name }}</h5>
+              <p class="fw-bold">Precio: {{ plato.price }}€</p>
+            </div>
+          </div>
+        </div>
+      }
+    }
+  </div>
+</div>
